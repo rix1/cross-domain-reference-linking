@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>System A</title>
+  </head>
+  <body>
+    <input
+      id="selectedItem"
+      type="text"
+      placeholder="Selected Item from System B"
+    />
+
+    <button onclick="openSystemB()">Select Item from System B</button>
+
+    <script>
+      function openSystemB() {
+        window.open("other.html", "System B", "width=500,height=500");
+      }
+
+      function setSelectedItem(item) {
+        document.getElementById("selectedItem").value = item;
+      }
+    </script>
+  </body>
+</html>

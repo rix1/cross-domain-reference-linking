@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>System A</title>
+    <script>
+      function openSystemB() {
+        const newWindow = window.open(
+          "http://192.168.1.159:3031/with-iframe/other",
+          "System B",
+          "width=500,height=500"
+        );
+
+        // Event listener to receive messages from System B
+        window.addEventListener(
+          "message",
+          function (event) {
+            // Check the origin for security
+            if (event.origin !== "http://192.168.1.159:3031") {
+              return;
+            }
+
+            // Populate the field in System A with the reference from System B
+            document.getElementById("referenceField").value = event.data;
+          },
+          false
+        );
+      }
+    </script>
+  </head>
+  <body>
+    <input type="text" id="referenceField" />
+    <button onclick="openSystemB()">Select Reference from System B</button>
+  </body>
+</html>
