@@ -1,13 +1,15 @@
 # Cross-Domain Reference Linking
 
-This repository demonstrates a method for selecting a reference from one window (or an iframe) and then updating the value in the parent window. Two methods are showcased:
+This repository demonstrates a pattern for selecting a reference from one window (or an iframe) and then updating the value in the parent window. Two methods are showcased:
 
 1. Direct usage of `window.opener` to update the parent window.
 2. A more secure and flexible approach using iframes and the `postMessage()` method, which works across different domains.
 
 
 ## Why Would You Want This?
-This approach and setup facilitate seamless interaction between two different web pages or systems. Whether you're building a feature that requires selecting references from a different domain, or you're trying to enhance user experience by pulling content from an external source directly into your application, these techniques provide a robust and secure way to bridge the gap. By utilizing methods like postMessage(), you can ensure data is transferred securely between domains, and achieve a fluid, integrated user experience without the constraints of cross-domain restrictions.
+This approach provides a good UX for letting you easily connect resources between two different web pages or systems. By utilizing methods like `postMessage()`, you can ensure data is transferred securely between domains, and provide an integrated user experience without the constraints of cross-domain restrictions.
+
+This was inspired by Django Admin which uses a similar approach.
 
 ## Main takeaways
 
